@@ -7,4 +7,6 @@ module com.kingdom_rush {
 
     opens com.kingdom_rush to javafx.fxml;
     exports com.kingdom_rush;
+    exports com.kingdom_rush.view;
+    opens com.kingdom_rush.view to javafx.fxml;
 }
