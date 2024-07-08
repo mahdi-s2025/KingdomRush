@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7fd58ed-afaf-4f94-909e-1234a9f8dbc0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/controller/FirstVideoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/sounds/buttons/hover/btn_special.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/exit_hover.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/login-page.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/start_hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingdom_rush/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingdom_rush/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/view/FirstVideoView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/view/Images.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/view/Sounds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/java/com/kingdom_rush/view/StartPageView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/com/kingdom_rush/first-video-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/com/kingdom_rush/first-video-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/com/kingdom_rush/start-page-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/sounds/buttons/hover/btn_special.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/login_hover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/signup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/signup_hover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/start_page.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../kingdom_rush/src/main/resources/start-page/start_page.jpg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2ivVpREdJoA7ATfWh04sviOoxeR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;subPages&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/java/kingdom_rush/kingdom_rush_tmp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\java\kingdom_rush\kingdom_rush\target\classes\com\kingdom_rush" />
+      <recent name="D:\Projects\java\kingdom_rush\kingdom_rush\target\classes\com\kingdom_rush\controller" />
+      <recent name="D:\Projects\java\kingdom_rush\kingdom_rush\target\classes\com\kingdom_rush\view" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="kingdom_rush_tmp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="kingdom_rush_tmp" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7fd58ed-afaf-4f94-909e-1234a9f8dbc0" name="Changes" comment="" />
+      <created>1720371223238</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720371223238</updated>
+      <workItem from="1720371224312" duration="15489000" />
+      <workItem from="1720390176572" duration="606000" />
+      <workItem from="1720430465452" duration="14659000" />
+      <workItem from="1720457870399" duration="7826000" />
+      <workItem from="1720466179118" duration="4887000" />
+      <workItem from="1720471538334" duration="12000" />
+      <workItem from="1720471693704" duration="1006000" />
+      <workItem from="1720472988338" duration="1115000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
