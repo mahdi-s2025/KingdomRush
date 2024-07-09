@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kingdom_rush.controller.StartPageController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../start-page/start_page.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btn_start" fitHeight="151.0" fitWidth="300.0" layoutX="489.0" layoutY="420.0" onMouseClicked="#btn_start_mouseClicked" onMouseEntered="#btn_start_mouseEntered" onMouseExited="#btn_start_mouseExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../start-page/start_hover.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btn_exit" fitHeight="130.0" fitWidth="266.0" layoutX="509.0" layoutY="574.0" onMouseClicked="#btn_exit_mouseClicked" onMouseEntered="#btn_exit_mouseEntered" onMouseExited="#btn_exit_mouseExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../start-page/exit_hover.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
