@@ -7,6 +7,7 @@ module com.kingdomrush {
     requires static lombok;
     requires java.sql;
     requires mysql.connector.j;
+    requires java.desktop;
 
     opens com.kingdom_rush to javafx.fxml;
     exports com.kingdom_rush;
