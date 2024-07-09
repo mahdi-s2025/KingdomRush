@@ -1,9 +1,11 @@
 package com.kingdom_rush.controller;
 
 import com.kingdom_rush.Main;
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,8 +15,10 @@ import javafx.scene.paint.Color;
 import lombok.Getter;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class SignupController {
+public class SignupController implements Initializable {
     @Getter
     private static final Scene signupScene;
 
@@ -40,7 +44,7 @@ public class SignupController {
     private Label lbl_login;
 
     @FXML
-    private TextField tf_password;
+    private TextField psf_password;
 
     @FXML
     private TextField tf_username;
@@ -49,11 +53,25 @@ public class SignupController {
     public SignupController() {
     }
 
-    // initialize method
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        BooleanBinding fieldsEmpty = tf_username.textProperty().isEmpty()
+                .or(psf_password.lengthProperty().lessThan(8));
+        btn_signup.disableProperty().bind(fieldsEmpty);
+    }
 
     @FXML
     void btn_signup_action(ActionEvent event) {
-
+        try {
+            PlayerController.getInstance().signup(tf_username.getText(), psf_password.getText());
+            LoginController.getLoginStage().close();
+            tf_username.clear();
+            psf_password.clear();
+            lbl_error.setText(null);
+            // change primary stage scene;
+        } catch (Exception e) {
+            lbl_error.setText(e.getMessage());
+        }
     }
 
     @FXML
@@ -83,4 +101,6 @@ public class SignupController {
     void lbl_login_mouseExited(MouseEvent event) {
         lbl_login.setTextFill(Color.BLACK);
     }
+
+
 }

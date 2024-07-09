@@ -13,7 +13,7 @@ public class Database {
     final private String password;
     final private Connection connection;
 
-    private Database() throws Exception {
+    private Database() {
         URL = "jdbc:mysql://localhost/game";
         userName = "root";
         password = "root";
@@ -27,28 +27,30 @@ public class Database {
         connection = tmp;
     }
 
-    public static Database getDatabase() throws Exception {
+    public static Database getDatabase() {
         if (database == null)
             database = new Database();
         return database;
     }
 
-    public void executeSQL(String cmd) throws Exception {
+    public void executeSQL(String cmd) {
         try {
             Statement statement = connection.prepareStatement(cmd);
             statement.execute(cmd);
             statement.close();
         } catch (Exception e) {
-            throw new Exception("Error executing SQL: " + cmd);
+            e.printStackTrace(System.err);
         }
     }
 
-    public ResultSet executeQuery(String cmd) throws Exception {
+    public ResultSet executeQuery(String cmd) {
+        ResultSet result = null;
         try {
             Statement statement = connection.prepareStatement(cmd);
-            return statement.executeQuery(cmd);
+            result = statement.executeQuery(cmd);
         } catch (Exception e) {
-            throw new Exception("Error executing Query: " + cmd);
+            e.printStackTrace(System.err);
         }
+        return result;
     }
 }

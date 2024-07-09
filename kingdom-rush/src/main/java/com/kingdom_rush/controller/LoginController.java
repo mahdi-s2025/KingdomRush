@@ -1,9 +1,11 @@
 package com.kingdom_rush.controller;
 
 import com.kingdom_rush.Main;
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,8 +17,10 @@ import javafx.stage.Stage;
 import lombok.Getter;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
     @Getter
     private static final Stage loginStage;
 
@@ -53,16 +57,30 @@ public class LoginController {
     private Label lbl_signup;
 
     @FXML
-    private TextField tf_password;
+    private TextField psf_password;
 
     @FXML
     private TextField tf_username;
 
-    // initialize method
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        BooleanBinding fieldsEmpty = tf_username.textProperty().isEmpty()
+                .or(psf_password.lengthProperty().lessThan(8));
+        btn_login.disableProperty().bind(fieldsEmpty);
+    }
 
     @FXML
     void btn_login_action(ActionEvent event) {
-
+        try {
+            PlayerController.getInstance().login(tf_username.getText(), psf_password.getText());
+            loginStage.close();
+            tf_username.clear();
+            psf_password.clear();
+            lbl_error.setText(null);
+            // change primary stage scene;
+        } catch (Exception e) {
+            lbl_error.setText(e.getMessage());
+        }
     }
 
     @FXML
