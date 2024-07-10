@@ -68,7 +68,8 @@ public class SignupController implements Initializable {
             tf_username.clear();
             psf_password.clear();
             lbl_error.setText(null);
-            // change primary stage scene;
+            Main.getPrimaryStage().setScene(HomePageController.getScene());
+            HomePageController.getMainThemeMusic().getMusic().start();
         } catch (Exception e) {
             lbl_error.setText(e.getMessage());
         }

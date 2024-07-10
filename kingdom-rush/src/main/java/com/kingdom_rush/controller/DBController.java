@@ -33,8 +33,7 @@ public class DBController {
         if (result.next()) {
             int ID = result.getInt("ID");
             Spell[] backpack = new Spell[4];
-            String spellsCmd = "SELECT health, freeze, coin, littleBoy FROM spells INNER JOIN " +
-                    "players ON players.ID = spells.ID WHERE players.ID = '" + ID + "'";
+            String spellsCmd = "SELECT health, freeze, coin, littleBoy FROM spells WHERE ID = '" + ID + "'";
             ResultSet spellsResult = database.executeQuery(spellsCmd);
             if (spellsResult.next()) {
                 backpack[0] = new HealthSpell(spellsResult.getInt("health"));
@@ -43,8 +42,18 @@ public class DBController {
                 backpack[3] = new LittleBoySpell(spellsResult.getInt("littleBoy"));
             }
 
+            int[] stars = new int[4];
+            String starsCmd = "SELECT level1, level2, level3, level4 FROM stars WHERE ID = '" + ID + "'";
+            ResultSet starsResult = database.executeQuery(starsCmd);
+            if (starsResult.next()) {
+                stars[0] = starsResult.getInt("level1");
+                stars[1] = starsResult.getInt("level2");
+                stars[2] = starsResult.getInt("level3");
+                stars[3] = starsResult.getInt("level4");
+            }
+
             targetPlayer = new Player(result.getString("username"), result.getString("password"),
-                    result.getInt("level"), result.getInt("diamonds"), backpack);
+                    result.getInt("level"), result.getInt("diamonds"), backpack, stars);
             targetPlayer.setID(ID);
             spellsResult.close();
         }
@@ -65,5 +74,8 @@ public class DBController {
 
         String spellsCmd = "INSERT INTO spells (ID) VALUES ('" + player.getID() + "')";
         database.executeSQL(spellsCmd);
+
+        String starsCmd = "INSERT INTO stars (ID) VALUES ('" + player.getID() + "')";
+        database.executeSQL(starsCmd);
     }
 }

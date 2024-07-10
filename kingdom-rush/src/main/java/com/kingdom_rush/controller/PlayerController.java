@@ -25,7 +25,8 @@ public class PlayerController {
         backpack[1] = new FreezeSpell(1);
         backpack[2] = new CoinSpell(1);
         backpack[3] = new LittleBoySpell(1);
-        player = new Player(username, password, 1, 100, backpack);
+        int[] stars = new int[4];
+        player = new Player(username, password, 1, 100, backpack, stars);
         DBController.getInstance().insertPlayer(player);
     }
 

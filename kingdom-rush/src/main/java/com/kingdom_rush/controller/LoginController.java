@@ -77,9 +77,11 @@ public class LoginController implements Initializable {
             tf_username.clear();
             psf_password.clear();
             lbl_error.setText(null);
-            // change primary stage scene;
+            primaryStage.setScene(HomePageController.getScene());
+            HomePageController.getMainThemeMusic().getMusic().start();
         } catch (Exception e) {
             lbl_error.setText(e.getMessage());
+            e.printStackTrace(System.err);
         }
     }
 

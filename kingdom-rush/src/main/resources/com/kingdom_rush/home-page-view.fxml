@@ -1,14 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.kingdom_rush.controller.HomePageController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kingdom_rush.controller.HomePageController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../home-page/home-page.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btn_settings" fitHeight="74.0" fitWidth="62.0" layoutX="181.0" layoutY="639.0" onMouseClicked="#btn_settings_mouseClicked" onMouseEntered="#btn_settings_mouseEntered" onMouseExited="#btn_settings_mouseExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../home-page/setting.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fx:id="btn_logout" fitHeight="56.0" fitWidth="55.0" layoutX="99.0" layoutY="639.0" onMouseClicked="#btn_logout_mouseClicked" onMouseEntered="#btn_logout_mouseEntered" onMouseExited="#btn_logout_mouseExited" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../home-page/logout.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fx:id="btn_level1_place" fitHeight="136.0" fitWidth="70.0" layoutX="227.0" layoutY="491.0" onMouseClicked="#btn_level1_place_mouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../home-page/level-place.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btn_level2_place" fitHeight="136.0" fitWidth="70.0" layoutX="261.0" layoutY="342.0" onMouseClicked="#btn_level2_place_mouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/level-place.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btn_level3_place" fitHeight="136.0" fitWidth="70.0" layoutX="383.0" layoutY="255.0" onMouseClicked="#btn_level3_place_mouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/level-place.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btn_level4_place" fitHeight="136.0" fitWidth="70.0" layoutX="471.0" layoutY="136.0" onMouseClicked="#btn_level4_place_mouseClicked" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/level-place.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="btn_shop" fitHeight="93.0" fitWidth="100.0" layoutX="1056.0" layoutY="626.0" onMouseClicked="#btn_shop_mouseClicked" onMouseEntered="#btn_shop_mouseEntered" onMouseExited="#btn_shop_mouseExited" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../home-page/shop.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star2_level1" fitHeight="30.0" fitWidth="35.0" layoutX="212.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star1_level1" fitHeight="30.0" fitWidth="35.0" layoutX="246.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star3_level1" fitHeight="30.0" fitWidth="35.0" layoutX="279.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star2_level2" fitHeight="30.0" fitWidth="35.0" layoutX="244.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star1_level2" fitHeight="30.0" fitWidth="35.0" layoutX="279.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star3_level2" fitHeight="30.0" fitWidth="35.0" layoutX="313.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star2_level3" fitHeight="30.0" fitWidth="35.0" layoutX="366.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star1_level3" fitHeight="30.0" fitWidth="35.0" layoutX="401.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star3_level3" fitHeight="30.0" fitWidth="35.0" layoutX="435.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star2_level4" fitHeight="30.0" fitWidth="35.0" layoutX="454.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star1_level4" fitHeight="30.0" fitWidth="35.0" layoutX="489.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star3_level4" fitHeight="30.0" fitWidth="35.0" layoutX="524.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../home-page/star.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="992.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../home-page/diamond-bar.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbl_diamond_bar" alignment="CENTER" layoutX="1047.0" layoutY="44.0" prefHeight="30.0" prefWidth="90.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="26.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

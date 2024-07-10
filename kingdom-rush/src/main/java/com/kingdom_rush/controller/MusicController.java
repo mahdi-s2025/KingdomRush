@@ -9,6 +9,7 @@ import java.io.IOException;
 @Getter
 public class MusicController {
     private Clip music;
+    private FloatControl volumeControl;
 
     public MusicController(String path) {
         try {
@@ -17,8 +18,17 @@ public class MusicController {
             music = AudioSystem.getClip();
             music.open(musicStream);
             music.loop(Clip.LOOP_CONTINUOUSLY);
+            volumeControl = (FloatControl) music.getControl(FloatControl.Type.MASTER_GAIN);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace(System.err);
         }
+    }
+
+    public void mute() {
+        volumeControl.setValue(volumeControl.getMinimum());
+    }
+
+    public void unmute() {
+        volumeControl.setValue(volumeControl.getMaximum());
     }
 }

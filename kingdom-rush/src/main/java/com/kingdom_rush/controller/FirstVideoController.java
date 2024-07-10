@@ -24,6 +24,7 @@ public class FirstVideoController implements Initializable {
     private MediaView mediaView;
 
     private final Stage primaryStage;
+    @Getter
     private Scene nextScene;
 
     public FirstVideoController() {
