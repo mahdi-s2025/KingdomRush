@@ -87,6 +87,7 @@ public class SettingController implements Initializable {
         String password = tf_new_password.getText();
         try {
             PlayerController.getInstance().checkPassword(password);
+            PlayerController.getInstance().getPlayer().setPassword(password);
             DBController.getInstance().updatePlayer(PlayerController.getInstance().getPlayer(), "password", password);
             tf_new_password.clear();
             lbl_error.setTextFill(Color.GREEN);
@@ -115,6 +116,7 @@ public class SettingController implements Initializable {
         String username = tf_new_username.getText();
         try {
             PlayerController.getInstance().checkUsername(username);
+            PlayerController.getInstance().getPlayer().setPassword(username);
             DBController.getInstance().updatePlayer(PlayerController.getInstance().getPlayer(), "username", username);
             tf_new_username.clear();
             lbl_error.setTextFill(Color.GREEN);

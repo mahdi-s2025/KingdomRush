@@ -2,25 +2,31 @@ package com.kingdom_rush.model;
 
 public class FreezeSpell implements Spell {
     private int number;
-    // price
+    private final int price;
 
     public FreezeSpell(int number) {
         this.number = number;
+        this.price = 50;
     }
 
     @Override
     public int getNumber() {
-        return 0;
+        return number;
     }
 
     @Override
     public void setNumber(int number) {
+        this.number = number;
+    }
 
+    @Override
+    public String getName() {
+        return "freeze";
     }
 
     @Override
     public int getPrice() {
-        return 0;
+        return price;
     }
 
     @Override

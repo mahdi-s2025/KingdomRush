@@ -19,21 +19,21 @@ import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable {
     @Getter
-    private final static Scene scene;
-
-    @Getter
     private final static MusicController mainThemeMusic;
 
-    static {
-        mainThemeMusic = new MusicController("src/main/resources/musics/MainTheme.wav");
+    public static Scene getScene() {
+        Scene scene = null;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home-page-view.fxml"));
-        Scene tmp = null;
         try {
-            tmp = new Scene(fxmlLoader.load(), 1280, 720);
+            scene = new Scene(fxmlLoader.load(), 1280, 720);
         } catch (IOException e) {
             e.printStackTrace(System.err);
         }
-        scene = tmp;
+        return scene;
+    }
+
+    static {
+        mainThemeMusic = new MusicController("src/main/resources/musics/MainTheme.wav");
     }
 
     @FXML
@@ -185,6 +185,7 @@ public class HomePageController implements Initializable {
 
     @FXML
     void btn_shop_mouseClicked(MouseEvent event) {
+        Main.getPrimaryStage().setScene(ShopController.getScene());
         MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
         mediaPlayer.play();
     }

@@ -4,6 +4,8 @@ import com.kingdom_rush.model.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,13 +22,13 @@ public class PlayerController {
     public void signup(String username, String password) throws Exception {
         checkUsername(username);
         checkPassword(password);
-        Spell[] backpack = new Spell[4];
-        backpack[0] = new HealthSpell(1);
-        backpack[1] = new FreezeSpell(1);
-        backpack[2] = new CoinSpell(1);
-        backpack[3] = new LittleBoySpell(1);
+        Map<String, Spell> backpack = new HashMap<>();
+        backpack.put("health", new HealthSpell(1));
+        backpack.put("freeze", new FreezeSpell(1));
+        backpack.put("coin", new CoinSpell(1));
+        backpack.put("littleBoy", new LittleBoySpell(1));
         int[] stars = new int[4];
-        player = new Player(username, password, 1, 100, backpack, stars);
+        player = new Player(username, password, 1, 200, backpack, stars);
         DBController.getInstance().insertPlayer(player);
     }
 

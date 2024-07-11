@@ -6,6 +6,8 @@ import lombok.Getter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DBController {
     @Getter
@@ -32,14 +34,14 @@ public class DBController {
 
         if (result.next()) {
             int ID = result.getInt("ID");
-            Spell[] backpack = new Spell[4];
+            Map<String, Spell> backpack = new HashMap<>();
             String spellsCmd = "SELECT health, freeze, coin, littleBoy FROM spells WHERE ID = '" + ID + "'";
             ResultSet spellsResult = database.executeQuery(spellsCmd);
             if (spellsResult.next()) {
-                backpack[0] = new HealthSpell(spellsResult.getInt("health"));
-                backpack[1] = new FreezeSpell(spellsResult.getInt("freeze"));
-                backpack[2] = new CoinSpell(spellsResult.getInt("coin"));
-                backpack[3] = new LittleBoySpell(spellsResult.getInt("littleBoy"));
+                backpack.put("health", new HealthSpell(spellsResult.getInt("health")));
+                backpack.put("freeze", new FreezeSpell(spellsResult.getInt("freeze")));
+                backpack.put("coin", new CoinSpell(spellsResult.getInt("coin")));
+                backpack.put("littleBoy", new LittleBoySpell(spellsResult.getInt("littleBoy")));
             }
 
             int[] stars = new int[4];
@@ -84,7 +86,7 @@ public class DBController {
         database.executeSQL(cmd);
     }
 
-    public void updateSpell(Player player, String name, String newValue) {
+    public void updateSpell(Player player, String name, int newValue) {
         String cmd = String.format("UPDATE spells SET %s = '%s' WHERE ID = '%s'", name, newValue, player.getID());
         database.executeSQL(cmd);
     }
