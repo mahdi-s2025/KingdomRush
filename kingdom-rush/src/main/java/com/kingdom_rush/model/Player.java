@@ -1,5 +1,6 @@
 package com.kingdom_rush.model;
 
+import com.kingdom_rush.model.spells.Spell;
 import lombok.Getter;
 import lombok.Setter;
 

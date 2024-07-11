@@ -1,4 +1,4 @@
-package com.kingdom_rush.model;
+package com.kingdom_rush.model.spells;
 
 public interface Spell {
     int getNumber();

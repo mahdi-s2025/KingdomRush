@@ -1,10 +1,10 @@
-package com.kingdom_rush.model;
+package com.kingdom_rush.model.spells;
 
-public class CoinSpell implements Spell {
+public class LittleBoySpell implements Spell {
     private int number;
     private final int price;
 
-    public CoinSpell(int number) {
+    public LittleBoySpell(int number) {
         this.number = number;
         this.price = 100;
     }
@@ -21,7 +21,7 @@ public class CoinSpell implements Spell {
 
     @Override
     public String getName() {
-        return "coin";
+        return "littleBoy";
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.kingdom_rush.controller;
 
 import com.kingdom_rush.model.*;
+import com.kingdom_rush.model.spells.*;
 import lombok.Getter;
 
 import java.sql.PreparedStatement;

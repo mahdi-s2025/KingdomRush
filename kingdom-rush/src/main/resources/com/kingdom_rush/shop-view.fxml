@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kingdom_rush.controller.ShopController">
    <children>
       <ImageView fx:id="shop_image" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -85,6 +84,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="btn_tick" fitHeight="115.0" fitWidth="175.0" layoutX="985.0" layoutY="600.0" onMouseClicked="#btn_tick_mouseClicked" onMouseEntered="#btn_tick_mouseEntered" onMouseExited="#btn_tick_mouseExited" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="btn_tick" fitHeight="115.0" fitWidth="175.0" layoutX="985.0" layoutY="600.0" onMouseClicked="#btn_tick_mouseClicked" onMouseEntered="#btn_tick_mouseEntered" onMouseExited="#btn_tick_mouseExited" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
    </children>
 </AnchorPane>

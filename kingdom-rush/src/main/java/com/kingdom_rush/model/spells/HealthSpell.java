@@ -1,10 +1,10 @@
-package com.kingdom_rush.model;
+package com.kingdom_rush.model.spells;
 
-public class FreezeSpell implements Spell {
+public class HealthSpell implements Spell {
     private int number;
     private final int price;
 
-    public FreezeSpell(int number) {
+    public HealthSpell(int number) {
         this.number = number;
         this.price = 50;
     }
@@ -21,7 +21,7 @@ public class FreezeSpell implements Spell {
 
     @Override
     public String getName() {
-        return "freeze";
+        return "health";
     }
 
     @Override

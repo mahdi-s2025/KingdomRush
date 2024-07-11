@@ -14,5 +14,6 @@ module com.kingdomrush {
     opens com.kingdom_rush.controller to javafx.fxml;
     exports com.kingdom_rush.controller;
     exports com.kingdom_rush.model;
+    exports com.kingdom_rush.model.spells;
 
 }
