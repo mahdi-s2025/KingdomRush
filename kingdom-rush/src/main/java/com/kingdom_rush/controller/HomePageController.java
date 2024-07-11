@@ -1,6 +1,8 @@
 package com.kingdom_rush.controller;
 
 import com.kingdom_rush.Main;
+import com.kingdom_rush.model.Images;
+import com.kingdom_rush.model.Sounds;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.MediaPlayer;
 import lombok.Getter;
 
 import java.io.IOException;
@@ -115,28 +118,37 @@ public class HomePageController implements Initializable {
 
     @FXML
     void btn_level1_place_mouseClicked(MouseEvent event) {
-
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
+        mediaPlayer.play();
     }
 
     @FXML
     void btn_level2_place_mouseClicked(MouseEvent event) {
-
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
+        mediaPlayer.play();
     }
 
     @FXML
     void btn_level3_place_mouseClicked(MouseEvent event) {
-
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
+        mediaPlayer.play();
     }
 
     @FXML
     void btn_level4_place_mouseClicked(MouseEvent event) {
-
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
+        mediaPlayer.play();
     }
 
     @FXML
     void btn_logout_mouseClicked(MouseEvent event) {
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_special_click);
+        mediaPlayer.play();
         PlayerController.getInstance().setPlayer(null);
         Main.getPrimaryStage().setScene(FirstVideoController.getInstance().getNextScene());
+        LoginController.getLoginStage().setScene(LoginController.getLoginScene());
+        mainThemeMusic.getMusic().stop();
+        mainThemeMusic.getMusic().setFramePosition(0);
     }
 
     @FXML
@@ -151,47 +163,34 @@ public class HomePageController implements Initializable {
 
     @FXML
     void btn_settings_mouseClicked(MouseEvent event) {
-
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
+        mediaPlayer.play();
+        SettingController.getSettingStage().show();
     }
 
     @FXML
     void btn_settings_mouseEntered(MouseEvent event) {
-
+        btn_settings.setImage(Images.getImage().setting_hover);
     }
 
     @FXML
     void btn_settings_mouseExited(MouseEvent event) {
-
+        btn_settings.setImage(Images.getImage().setting);
     }
 
     @FXML
     void btn_shop_mouseEntered(MouseEvent event) {
-
+        btn_shop.setImage(Images.getImage().shop_hover);
     }
 
     @FXML
     void btn_shop_mouseClicked(MouseEvent event) {
-
+        MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
+        mediaPlayer.play();
     }
 
     @FXML
     void btn_shop_mouseExited(MouseEvent event) {
-
+        btn_shop.setImage(Images.getImage().shop);
     }
-
-//    private static void showLevels() {
-
-//    }
-//
-//    public static Scene getScene() {
-//        showLevels();
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home-page-view.fxml"));
-//        Scene scene = null;
-//        try {
-//            scene = new Scene(fxmlLoader.load(), 1280, 720);
-//        } catch (IOException e) {
-//            e.printStackTrace(System.err);
-//        }
-//        return scene;
-//    }
 }

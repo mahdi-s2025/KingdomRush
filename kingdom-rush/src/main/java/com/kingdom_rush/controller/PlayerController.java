@@ -30,7 +30,7 @@ public class PlayerController {
         DBController.getInstance().insertPlayer(player);
     }
 
-    private void checkUsername(String username) throws Exception {
+    public void checkUsername(String username) throws Exception {
         if (DBController.getInstance().findPlayer(username) != null)
             throw new Exception("Username already exists!");
         Pattern usernamePattern = Pattern.compile("^[A-Za-z1-9]+(_)?[A-Za-z1-9]+$");
@@ -40,7 +40,7 @@ public class PlayerController {
         }
     }
 
-    private void checkPassword(String password) throws Exception {
+    public void checkPassword(String password) throws Exception {
         switch (passwordStrength(password)) {
             case 0 -> throw new Exception("The password is too short.\nIt must have more than 8 characters");
             case 1 -> throw new Exception("The password is weak. Its strength is 1 out of 4." +

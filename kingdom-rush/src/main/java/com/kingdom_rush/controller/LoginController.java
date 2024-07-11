@@ -78,7 +78,8 @@ public class LoginController implements Initializable {
             psf_password.clear();
             lbl_error.setText(null);
             primaryStage.setScene(HomePageController.getScene());
-            HomePageController.getMainThemeMusic().getMusic().start();
+            if (!HomePageController.getMainThemeMusic().isMute())
+                HomePageController.getMainThemeMusic().getMusic().start();
         } catch (Exception e) {
             lbl_error.setText(e.getMessage());
             e.printStackTrace(System.err);

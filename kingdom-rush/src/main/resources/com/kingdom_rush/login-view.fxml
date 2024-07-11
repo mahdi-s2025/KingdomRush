@@ -17,12 +17,12 @@
             <Image url="@../../start-page/login-page.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="tf_username" layoutX="83.0" layoutY="126.0" prefHeight="35.0" prefWidth="230.0" promptText="Username" style="-fx-background-radius: 20;">
+      <TextField fx:id="tf_username" focusTraversable="false" layoutX="83.0" layoutY="126.0" prefHeight="35.0" prefWidth="230.0" promptText="Username" style="-fx-background-radius: 20;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Label layoutX="83.0" layoutY="80.0" prefHeight="46.0" prefWidth="73.0" text="username">
+      <Label focusTraversable="false" layoutX="83.0" layoutY="80.0" prefHeight="46.0" prefWidth="73.0" text="username">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
@@ -32,12 +32,12 @@
             <Font name="Cambria" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="172.0" prefHeight="46.0" prefWidth="73.0" text="password">
+      <Label focusTraversable="false" layoutX="83.0" layoutY="172.0" prefHeight="46.0" prefWidth="73.0" text="password">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btn_login" layoutX="84.0" layoutY="280.0" mnemonicParsing="false" onAction="#btn_login_action" onMouseEntered="#btn_login_mouseEntered" onMouseExited="#btn_login_mouseExited" prefHeight="40.0" prefWidth="230.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-color: red; -fx-border-radius: 20; -fx-border-width: 2;" text="Login ">
+      <Button fx:id="btn_login" defaultButton="true" focusTraversable="false" layoutX="84.0" layoutY="280.0" mnemonicParsing="false" onAction="#btn_login_action" onMouseEntered="#btn_login_mouseEntered" onMouseExited="#btn_login_mouseExited" prefHeight="40.0" prefWidth="230.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-color: red; -fx-border-radius: 20; -fx-border-width: 2;" text="Login ">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -50,7 +50,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="127.0" layoutY="337.0" prefHeight="18.0" prefWidth="74.0" text="New User?">
+      <Label focusTraversable="false" layoutX="127.0" layoutY="337.0" prefHeight="18.0" prefWidth="74.0" text="New User?">
          <font>
             <Font name="Cambria Bold" size="14.0" />
          </font>
@@ -63,7 +63,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <PasswordField fx:id="psf_password" layoutX="82.0" layoutY="218.0" prefHeight="35.0" prefWidth="230.0" promptText="Password" style="-fx-background-radius: 20;">
+      <PasswordField fx:id="psf_password" focusTraversable="false" layoutX="82.0" layoutY="218.0" prefHeight="35.0" prefWidth="230.0" promptText="Password" style="-fx-background-radius: 20;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>

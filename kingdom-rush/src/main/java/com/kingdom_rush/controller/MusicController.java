@@ -9,7 +9,8 @@ import java.io.IOException;
 @Getter
 public class MusicController {
     private Clip music;
-    private FloatControl volumeControl;
+    private long muteTime;
+    private boolean isMute;
 
     public MusicController(String path) {
         try {
@@ -18,17 +19,25 @@ public class MusicController {
             music = AudioSystem.getClip();
             music.open(musicStream);
             music.loop(Clip.LOOP_CONTINUOUSLY);
-            volumeControl = (FloatControl) music.getControl(FloatControl.Type.MASTER_GAIN);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace(System.err);
         }
     }
 
     public void mute() {
-        volumeControl.setValue(volumeControl.getMinimum());
+        muteTime = System.currentTimeMillis();
+        music.stop();
+        isMute = true;
     }
 
     public void unmute() {
-        volumeControl.setValue(volumeControl.getMaximum());
+        long time = System.currentTimeMillis() - muteTime;
+        time *= 1000;
+        time %= music.getMicrosecondLength();
+        long newTime = music.getMicrosecondPosition() + time;
+        newTime %= music.getMicrosecondLength();
+        music.setMicrosecondPosition(newTime);
+        music.start();
+        isMute = false;
     }
 }

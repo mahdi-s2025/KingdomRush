@@ -17,7 +17,7 @@
                 <Image url="@../../start-page/login-page.jpg" />
             </image>
         </ImageView>
-        <TextField fx:id="tf_username" layoutX="83.0" layoutY="126.0" prefHeight="35.0" prefWidth="230.0" promptText="Username" style="-fx-background-radius: 20;">
+        <TextField fx:id="tf_username" focusTraversable="false" layoutX="83.0" layoutY="126.0" prefHeight="35.0" prefWidth="230.0" promptText="Username" style="-fx-background-radius: 20;">
             <cursor>
                 <Cursor fx:constant="TEXT" />
             </cursor>
@@ -37,7 +37,7 @@
                 <Font name="Times New Roman" size="18.0" />
             </font>
         </Label>
-        <Button fx:id="btn_signup" layoutX="84.0" layoutY="280.0" mnemonicParsing="false" onAction="#btn_signup_action" onMouseEntered="#btn_signup_mouseEntered" onMouseExited="#btn_signup_mouseExited" prefHeight="40.0" prefWidth="230.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-color: red; -fx-border-radius: 20; -fx-border-width: 2;" text="Sign up">
+        <Button fx:id="btn_signup" defaultButton="true" focusTraversable="false" layoutX="84.0" layoutY="280.0" mnemonicParsing="false" onAction="#btn_signup_action" onMouseEntered="#btn_signup_mouseEntered" onMouseExited="#btn_signup_mouseExited" prefHeight="40.0" prefWidth="230.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-color: red; -fx-border-radius: 20; -fx-border-width: 2;" text="Sign up">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -63,7 +63,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
         </Label>
-      <PasswordField fx:id="psf_password" layoutX="83.0" layoutY="218.0" prefHeight="35.0" prefWidth="230.0" promptText="Password" style="-fx-background-radius: 20;">
+      <PasswordField fx:id="psf_password" focusTraversable="false" layoutX="83.0" layoutY="218.0" prefHeight="35.0" prefWidth="230.0" promptText="Password" style="-fx-background-radius: 20;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>

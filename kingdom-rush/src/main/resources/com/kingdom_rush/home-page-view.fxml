@@ -89,6 +89,9 @@
          <image>
             <Image url="@../../home-page/shop.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fx:id="star2_level1" fitHeight="30.0" fitWidth="35.0" layoutX="212.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>

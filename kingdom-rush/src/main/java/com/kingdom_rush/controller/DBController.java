@@ -78,4 +78,14 @@ public class DBController {
         String starsCmd = "INSERT INTO stars (ID) VALUES ('" + player.getID() + "')";
         database.executeSQL(starsCmd);
     }
+
+    public void updatePlayer(Player player, String field, String newValue) {
+        String cmd = String.format("UPDATE players SET %s = '%s' WHERE ID = '%s'",field, newValue, player.getID());
+        database.executeSQL(cmd);
+    }
+
+    public void updateSpell(Player player, String name, String newValue) {
+        String cmd = String.format("UPDATE spells SET %s = '%s' WHERE ID = '%s'", name, newValue, player.getID());
+        database.executeSQL(cmd);
+    }
 }

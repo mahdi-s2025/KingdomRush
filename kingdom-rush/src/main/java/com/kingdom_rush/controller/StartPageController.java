@@ -28,7 +28,6 @@ public class StartPageController implements Initializable {
 
     public StartPageController() {
         primaryStage = Main.getPrimaryStage();
-        //mainThemeMusic = new MusicController("src/main/resources/musics/MainTheme.wav");
     }
 
     @FXML
