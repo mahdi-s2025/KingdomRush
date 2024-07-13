@@ -10,7 +10,6 @@ import java.io.IOException;
 public class MusicController {
     private Clip music;
     private long muteTime;
-    private boolean isMute;
 
     public MusicController(String path) {
         try {
@@ -27,7 +26,6 @@ public class MusicController {
     public void mute() {
         muteTime = System.currentTimeMillis();
         music.stop();
-        isMute = true;
     }
 
     public void unmute() {
@@ -37,7 +35,7 @@ public class MusicController {
         long newTime = music.getMicrosecondPosition() + time;
         newTime %= music.getMicrosecondLength();
         music.setMicrosecondPosition(newTime);
+        music.loop(Clip.LOOP_CONTINUOUSLY);
         music.start();
-        isMute = false;
     }
 }

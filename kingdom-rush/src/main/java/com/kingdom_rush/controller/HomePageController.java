@@ -1,8 +1,12 @@
 package com.kingdom_rush.controller;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 import com.kingdom_rush.Main;
 import com.kingdom_rush.model.Images;
+import com.kingdom_rush.model.Map;
 import com.kingdom_rush.model.Sounds;
+import com.kingdom_rush.model.Wave;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,8 +15,12 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.shape.LineTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
 import lombok.Getter;
 
+import javax.sound.sampled.Clip;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +30,9 @@ public class HomePageController implements Initializable {
     private final static MusicController mainThemeMusic;
 
     public static Scene getScene() {
+        mainThemeMusic.getMusic().loop(Clip.LOOP_CONTINUOUSLY);
+        mainThemeMusic.getMusic().start();
+        SettingController.resetSettingStage();
         Scene scene = null;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home-page-view.fxml"));
         try {
@@ -120,6 +131,55 @@ public class HomePageController implements Initializable {
     void btn_level1_place_mouseClicked(MouseEvent event) {
         MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
         mediaPlayer.play();
+        mainThemeMusic.getMusic().stop();
+        mainThemeMusic.getMusic().setFramePosition(0);
+
+
+        MusicController level1Music = new MusicController("src/main/resources/musics/IceWindPass.wav");
+
+        int[][] coordinations = {{427, 248}, {515, 219}, {524, 377}, {523, 455},
+                {626, 456}, {811, 468}, {699, 582}, {969, 547}};
+
+        MoveTo moveTo = new MoveTo(690, -60);
+        LineTo line1 = new LineTo(690, 233);
+        LineTo line2 = new LineTo(490, 360);
+        LineTo line3 = new LineTo(495, 520);
+        LineTo line4 = new LineTo(925, 540);
+        LineTo line5 = new LineTo(1045, 450);
+        LineTo line6 = new LineTo(1320, 450);
+        Path[] paths = {new Path(moveTo, line1, line2, line3, line4, line5, line6)};
+
+        // change the waves
+
+        int[][] wave1_distro = {{3, 5}, {2, 3}, {3, 5}, {1, 4}, {2, 3}};
+
+//        Multimap<String, Integer> map_wave1 = ArrayListMultimap.create();
+//        map_wave1.put("speed", 5);
+//        map_wave1.put("shield", 3);
+//        map_wave1.put("speed", 5);
+//        map_wave1.put("fly", 4);
+//        map_wave1.put("shield", 3);
+
+        Wave wave1 = new Wave(wave1_distro, paths);
+
+        int[][] wave2_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}, {1, 4}};
+
+//        Multimap<String, Integer> map_wave2 = ArrayListMultimap.create();
+//        map_wave2.put("speed", 8);
+//        map_wave2.put("shield", 5);
+//        map_wave2.put("fly", 4);
+//        map_wave2.put("shield", 5);
+//        map_wave2.put("speed", 10);
+//        map_wave2.put("fly", 4);
+
+        Wave wave2 = new Wave(wave2_distro, paths);
+
+        Wave[] waves = {wave1, wave2};
+
+        Map level1 = new Map(Images.getImage().map_1, coordinations, 200, 20, level1Music, waves);
+        MapController.setMap(level1);
+        Main.getPrimaryStage().setScene(MapController.getScene());
+
     }
 
     @FXML

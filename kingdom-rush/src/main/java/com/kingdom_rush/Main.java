@@ -23,12 +23,20 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.setTitle("Kingdom Rush");
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("first-video-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        primaryStage.setScene(scene);
-        primaryStage.show();
 
         new Thread(() -> {
             try {
+                Thread.sleep(1000);
+                Platform.runLater(() -> {
+                    Scene scene;
+                    try {
+                        scene = new Scene(fxmlLoader.load(), 1280, 720);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    primaryStage.setScene(scene);
+                    primaryStage.show();
+                });
                 Thread.sleep(3500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

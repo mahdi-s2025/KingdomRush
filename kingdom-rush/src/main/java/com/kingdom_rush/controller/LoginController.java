@@ -21,13 +21,24 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
-    @Getter
     private static final Stage loginStage;
-
-    @Getter
-    private static final Scene loginScene;
-
     private static final Stage primaryStage;
+
+    public static Scene getLoginScene() {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-view.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 400, 550);
+        } catch (IOException e) {
+            e.printStackTrace(System.err);
+        }
+        return scene;
+    }
+
+    public static Stage getLoginStage() {
+        loginStage.setScene(LoginController.getLoginScene());
+        return loginStage;
+    }
 
     static {
         primaryStage = Main.getPrimaryStage();
@@ -36,15 +47,6 @@ public class LoginController implements Initializable {
         loginStage.setResizable(false);
         loginStage.initOwner(Main.getPrimaryStage());
         loginStage.initModality(Modality.WINDOW_MODAL);
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login-view.fxml"));
-        Scene tmp = null;
-        try {
-            tmp = new Scene(fxmlLoader.load(), 400, 550);
-        } catch (IOException e) {
-            e.printStackTrace(System.err);
-        }
-        loginScene = tmp;
-        loginStage.setScene(loginScene);
     }
 
     @FXML
@@ -64,22 +66,24 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        BooleanBinding fieldsEmpty = tf_username.textProperty().isEmpty()
-                .or(psf_password.lengthProperty().lessThan(8));
-        btn_login.disableProperty().bind(fieldsEmpty);
+//        BooleanBinding fieldsEmpty = tf_username.textProperty().isEmpty()
+//                .or(psf_password.lengthProperty().lessThan(8));
+//        btn_login.disableProperty().bind(fieldsEmpty);
     }
 
     @FXML
     void btn_login_action(ActionEvent event) {
         try {
+
+            tf_username.setText("mahdi_s");
+            psf_password.setText("Mahdi2020!");
+
             PlayerController.getInstance().login(tf_username.getText(), psf_password.getText());
             loginStage.close();
             tf_username.clear();
             psf_password.clear();
             lbl_error.setText(null);
             primaryStage.setScene(HomePageController.getScene());
-            if (!HomePageController.getMainThemeMusic().isMute())
-                HomePageController.getMainThemeMusic().getMusic().start();
         } catch (Exception e) {
             lbl_error.setText(e.getMessage());
             e.printStackTrace(System.err);

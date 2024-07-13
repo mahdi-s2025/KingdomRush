@@ -19,19 +19,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SignupController implements Initializable {
-    @Getter
-    private static final Scene signupScene;
 
-    static {
+    public static Scene getSignupScene() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signup-view.fxml"));
-        Scene tmp = null;
+        Scene signupScene = null;
         try {
-            tmp = new Scene(fxmlLoader.load(), 400, 550);
+            signupScene = new Scene(fxmlLoader.load(), 400, 550);
 
         } catch (IOException e) {
             e.printStackTrace(System.err);
         }
-        signupScene = tmp;
+        return signupScene;
     }
 
     @FXML
@@ -69,7 +67,6 @@ public class SignupController implements Initializable {
             psf_password.clear();
             lbl_error.setText(null);
             Main.getPrimaryStage().setScene(HomePageController.getScene());
-            HomePageController.getMainThemeMusic().getMusic().start();
         } catch (Exception e) {
             lbl_error.setText(e.getMessage());
         }
@@ -102,6 +99,4 @@ public class SignupController implements Initializable {
     void lbl_login_mouseExited(MouseEvent event) {
         lbl_login.setTextFill(Color.BLACK);
     }
-
-
 }

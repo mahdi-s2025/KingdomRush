@@ -29,9 +29,6 @@ public class SettingController implements Initializable {
     @Getter
     private final static Stage settingStage;
 
-    @Getter
-    private final static SettingController instance;
-
     static {
         settingStage = new Stage();
         settingStage.setTitle("Settings");
@@ -39,6 +36,9 @@ public class SettingController implements Initializable {
         settingStage.initOwner(Main.getPrimaryStage());
         settingStage.initModality(Modality.WINDOW_MODAL);
         settingStage.initStyle(StageStyle.TRANSPARENT);
+    }
+
+    public static Stage resetSettingStage() {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("setting-view.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 400, 450);
@@ -46,7 +46,7 @@ public class SettingController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace(System.err);
         }
-        instance = new SettingController();
+        return settingStage;
     }
 
     @FXML

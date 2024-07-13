@@ -8,6 +8,7 @@ module com.kingdomrush {
     requires java.sql;
     requires mysql.connector.j;
     requires java.desktop;
+    requires com.google.common;
 
     opens com.kingdom_rush to javafx.fxml;
     exports com.kingdom_rush;
