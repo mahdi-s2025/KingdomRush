@@ -32,18 +32,18 @@ public class Wave {
                 }
                 // and the shoot
             }
-            int reminder = wave.size() % paths.length;
-            int indicator = wave.size() / paths.length;
-            int j = 0;
-            for (int i = 1; i <= wave.size() ; i++) {
-                if ((i % indicator + 1) == 0)
-                    j++;
-                wave.get(i-1).setPath(paths[j]);
-            }
+        }
+        int reminder = wave.size() % paths.length;
+        int indicator = wave.size() / paths.length;
+        int j = 0;
+        for (int i = 1; i <= wave.size() ; i++) {
+            if ((i % (indicator + 1)) == 0)
+                j++;
+            wave.get(i-1).setPath(paths[j]);
+        }
 
-            for (int i = wave.size() - 1; i >= wave.size() - reminder ; i--) {
-                wave.get(i).setPath(paths[j]);
-            }
+        for (int i = wave.size() - 1; i >= wave.size() - reminder ; i--) {
+            wave.get(i).setPath(paths[j]);
         }
     }
 }

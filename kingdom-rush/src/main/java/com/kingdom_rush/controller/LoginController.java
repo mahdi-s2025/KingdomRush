@@ -66,18 +66,14 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        BooleanBinding fieldsEmpty = tf_username.textProperty().isEmpty()
-//                .or(psf_password.lengthProperty().lessThan(8));
-//        btn_login.disableProperty().bind(fieldsEmpty);
+        BooleanBinding fieldsEmpty = tf_username.textProperty().isEmpty()
+                .or(psf_password.lengthProperty().lessThan(8));
+        btn_login.disableProperty().bind(fieldsEmpty);
     }
 
     @FXML
     void btn_login_action(ActionEvent event) {
         try {
-
-            tf_username.setText("mahdi_s");
-            psf_password.setText("Mahdi2020!");
-
             PlayerController.getInstance().login(tf_username.getText(), psf_password.getText());
             loginStage.close();
             tf_username.clear();

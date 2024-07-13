@@ -7,11 +7,8 @@ import lombok.Getter;
 
 @Getter
 public class FlyRaider extends Raider {
-    private final RaiderType raiderType;
-
     public FlyRaider() {
-        super(250, 35, 50, 3, Images.getImage().fly);
-        this.raiderType = RaiderType.FLY;
+        super(250, 35, 50, 3, Images.getImage().fly, RaiderType.FLY);
         this.setFitWidth(77);
         this.setFitHeight(60);
     }

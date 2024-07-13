@@ -10,10 +10,10 @@ public class Map {
     private final MusicController musicController;
     private final Image mapImage;
     private final int[][] towerCoordinations;
-    // end coordination :: maybe doesn't need
     private final Wave[] waves;
     private int coin;
     private int health;
+    private final int maxHealth;
 
     public Map(Image mapImage, int[][] towerCoordinations, int coin, int health, MusicController musicController, Wave[] waves) {
         this.mapImage = mapImage;
@@ -21,6 +21,7 @@ public class Map {
         this.towerCoordinations = towerCoordinations;
         this.coin = coin;
         this.health = health;
+        this.maxHealth = health;
         this.waves = waves;
     }
 }

@@ -146,7 +146,7 @@ public class HomePageController implements Initializable {
         int[][] coordinations = {{427, 248}, {515, 219}, {524, 377}, {523, 455},
                 {626, 456}, {811, 468}, {699, 582}, {969, 547}};
 
-        MoveTo moveTo = new MoveTo(690, -60);
+        MoveTo moveTo = new MoveTo(690, -10);
         LineTo line1 = new LineTo(690, 233);
         LineTo line2 = new LineTo(490, 360);
         LineTo line3 = new LineTo(495, 520);
@@ -160,7 +160,7 @@ public class HomePageController implements Initializable {
         int[][] wave1_distro = {{3, 5}, {2, 3}, {3, 5}, {1, 4}, {2, 3}};
         Wave wave1 = new Wave(wave1_distro, paths);
 
-        int[][] wave2_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}, {1, 4}};
+        int[][] wave2_distro = {{2, 5}, {1, 4}, {3, 5}, {2, 5}, {1, 4}};
         Wave wave2 = new Wave(wave2_distro, paths);
 
         Wave[] waves = {wave1, wave2};
@@ -180,22 +180,23 @@ public class HomePageController implements Initializable {
         mainThemeMusic.getMusic().setFramePosition(0);
 
 
-        MusicController level1Music = new MusicController("src/main/resources/musics/UnderAttack.wav");
+        MusicController level2Music = new MusicController("src/main/resources/musics/UnderAttack.wav");
 
         int[][] coordinations = {{773, 156}, {771, 239}, {590, 177}, {522, 325},
                 {698, 456}, {597, 476}, {712, 605}};
 
-        MoveTo moveTo = new MoveTo(1330, 240);
-        LineTo line1 = new LineTo(945, 270);
-        LineTo line2 = new LineTo(870, 115);
-        LineTo line3 = new LineTo(755, 150);
-        LineTo line4 = new LineTo(678, 282);
-        LineTo line5 = new LineTo(500, 315);
-        LineTo line6 = new LineTo(493, 430);
-        LineTo line7 = new LineTo(845, 436);
-        LineTo line8 = new LineTo(840, 570);
-        LineTo line9 = new LineTo(685, 605);
-        LineTo line10 = new LineTo(675, 760);
+        MoveTo moveTo = new MoveTo(670, 730);
+        LineTo line1 = new LineTo(680, 590);
+        LineTo line2 = new LineTo(835, 555);
+        LineTo line3 = new LineTo(840, 425);
+        LineTo line4 = new LineTo(493, 415);
+        LineTo line5 = new LineTo(500, 300);
+        LineTo line6 = new LineTo(678, 270);
+        LineTo line7 = new LineTo(755, 130);
+        LineTo line8 = new LineTo(870, 90);
+        LineTo line9 = new LineTo(955, 250);
+        LineTo line10 = new LineTo(1330, 240);
+
         Path[] paths = {new Path(moveTo, line1, line2, line3, line4, line5, line6, line7, line8, line9, line10)};
 
         // change the waves
@@ -203,15 +204,16 @@ public class HomePageController implements Initializable {
         int[][] wave1_distro = {{3, 5}, {2, 3}, {3, 5}, {1, 4}, {2, 3}};
         Wave wave1 = new Wave(wave1_distro, paths);
 
-        int[][] wave2_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}, {1, 4}};
+        int[][] wave2_distro = {{2, 5}, {1, 4}, {3, 5}, {2, 5}, {1, 4}};
         Wave wave2 = new Wave(wave2_distro, paths);
 
-        int[][] wave3_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}};
+        int[][] wave3_distro = {{2, 3}, {1, 3}, {3, 5}};
+        Wave wave3 = new Wave(wave3_distro, paths);
 
-        Wave[] waves = {wave1, wave2};
+        Wave[] waves = {wave1, wave2, wave3};
 
-        Map level1 = new Map(Images.getImage().map_1, coordinations, 200, 20, level1Music, waves);
-        MapController.setMap(level1);
+        Map level2 = new Map(Images.getImage().map_2, coordinations, 300, 30, level2Music, waves);
+        MapController.setMap(level2);
         Main.getPrimaryStage().setScene(MapController.getScene());
     }
 
@@ -219,6 +221,55 @@ public class HomePageController implements Initializable {
     void btn_level3_place_mouseClicked(MouseEvent event) {
         MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
         mediaPlayer.play();
+
+        mainThemeMusic.getMusic().stop();
+        mainThemeMusic.getMusic().setFramePosition(0);
+
+
+        MusicController level3Music = new MusicController("src/main/resources/musics/UnholyMarch.wav");
+
+        int[][] coordinations = {{555, 405}, {661, 448}, {765, 479}, {470, 551},
+                {577, 586}, {951, 576}, {804, 341}, {630, 235}, {743, 208}, {861, 207}, {551, 116}, {650, 91}};
+
+        MoveTo moveTo1 = new MoveTo(-10, 485);
+        LineTo line1_1 = new LineTo(505, 485);
+        LineTo line1_2 = new LineTo(745, 575);
+        LineTo line1_3 = new LineTo(920, 570);
+        LineTo line1_4 = new LineTo(930, 473);
+        LineTo line1_5 = new LineTo(714, 370);
+        LineTo line1_6 = new LineTo(797, 306);
+        LineTo line1_7 = new LineTo(917, 305);
+        LineTo line1_8 = new LineTo(1350, 370);
+
+        MoveTo moveTo2 = new MoveTo(-50, 460);
+        LineTo line2_1 = new LineTo(505, 460);
+        LineTo line2_2 = new LineTo(745, 535);
+        LineTo line2_3 = new LineTo(910, 545);
+        LineTo line2_4 = new LineTo(915, 485);
+        LineTo line2_5 = new LineTo(564, 282);
+        LineTo line2_6 = new LineTo(646, 197);
+        LineTo line2_7 = new LineTo(920, 150);
+        LineTo line2_8 = new LineTo(1350, 190);
+
+        Path[] paths = {new Path(moveTo1, line1_1, line1_2, line1_3, line1_4, line1_5, line1_6, line1_7, line1_8),
+                new Path(moveTo2, line2_1, line2_2, line2_3, line2_4, line2_5, line2_6, line2_7, line2_8)};
+
+        // change the waves
+
+        int[][] wave1_distro = {{3, 5}, {2, 3}, {3, 5}, {1, 4}, {2, 3}};
+        Wave wave1 = new Wave(wave1_distro, paths);
+
+        int[][] wave2_distro = {{2, 5}, {1, 4}, {3, 5}, {2, 5}, {1, 4}};
+        Wave wave2 = new Wave(wave2_distro, paths);
+
+        int[][] wave3_distro = {{2, 3}, {1, 3}, {3, 5}};
+        Wave wave3 = new Wave(wave3_distro, paths);
+
+        Wave[] waves = {wave1, wave2, wave3};
+
+        Map level3 = new Map(Images.getImage().map_3, coordinations, 300, 30, level3Music, waves);
+        MapController.setMap(level3);
+        Main.getPrimaryStage().setScene(MapController.getScene());
     }
 
     @FXML

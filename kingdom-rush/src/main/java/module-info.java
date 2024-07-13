@@ -9,6 +9,7 @@ module com.kingdomrush {
     requires mysql.connector.j;
     requires java.desktop;
     requires com.google.common;
+    requires annotations;
 
     opens com.kingdom_rush to javafx.fxml;
     exports com.kingdom_rush;

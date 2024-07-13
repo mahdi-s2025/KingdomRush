@@ -9,7 +9,8 @@ public class Images {
     public Image buy_hover, tick_hover, shop_coin, shop_health, shop_freeze, shop_little_boy;
     public Image map_1, map_2, map_3, map_4;
     public Image archer, mage, bertha, tower_place, tower_bar, update_bar;
-    public Image speed, shield, fly;
+    public Image speed, shield, fly, shield_stop, speed_stop, fly_stop;
+    public Image close, ball, arrow;
 
 
     private Images() {
@@ -41,6 +42,12 @@ public class Images {
         speed = new Image(imagesPath + "map/speed.gif");
         shield = new Image(imagesPath + "map/shield.gif");
         fly = new Image(imagesPath + "map/fly.gif");
+        shield_stop = new Image(imagesPath + "map/shield-stop.gif");
+        speed_stop = new Image(imagesPath + "map/speed-stop.gif");
+        fly_stop = new Image(imagesPath + "map/fly-stop.gif");
+        close = new Image(imagesPath + "home-page/close.png");
+        ball = new Image(imagesPath + "map/ball.png");
+        arrow = new Image(imagesPath + "map/arrow.png");
     }
 
     public static Images getImage() {

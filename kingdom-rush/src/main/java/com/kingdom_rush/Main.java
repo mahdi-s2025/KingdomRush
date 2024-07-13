@@ -26,7 +26,7 @@ public class Main extends Application {
 
         new Thread(() -> {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 Platform.runLater(() -> {
                     Scene scene;
                     try {
