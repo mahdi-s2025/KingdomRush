@@ -188,7 +188,7 @@ public class ShopController implements Initializable {
 
     @FXML
     void btn_tick_mouseClicked(MouseEvent event) {
-        Main.getPrimaryStage().setScene(HomePageController.getScene());
+        Main.getPrimaryStage().setScene(HomePageController.getOnleyScene());
     }
 
     @FXML

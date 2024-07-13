@@ -18,6 +18,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
+import javafx.stage.Stage;
 import lombok.Getter;
 
 import javax.sound.sampled.Clip;
@@ -28,18 +29,23 @@ import java.util.ResourceBundle;
 public class HomePageController implements Initializable {
     @Getter
     private final static MusicController mainThemeMusic;
+    private static Scene scene;
 
     public static Scene getScene() {
         mainThemeMusic.getMusic().loop(Clip.LOOP_CONTINUOUSLY);
         mainThemeMusic.getMusic().start();
         SettingController.resetSettingStage();
-        Scene scene = null;
+        scene = null;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home-page-view.fxml"));
         try {
             scene = new Scene(fxmlLoader.load(), 1280, 720);
         } catch (IOException e) {
             e.printStackTrace(System.err);
         }
+        return scene;
+    }
+
+    public static Scene getOnleyScene() {
         return scene;
     }
 
@@ -152,26 +158,9 @@ public class HomePageController implements Initializable {
         // change the waves
 
         int[][] wave1_distro = {{3, 5}, {2, 3}, {3, 5}, {1, 4}, {2, 3}};
-
-//        Multimap<String, Integer> map_wave1 = ArrayListMultimap.create();
-//        map_wave1.put("speed", 5);
-//        map_wave1.put("shield", 3);
-//        map_wave1.put("speed", 5);
-//        map_wave1.put("fly", 4);
-//        map_wave1.put("shield", 3);
-
         Wave wave1 = new Wave(wave1_distro, paths);
 
         int[][] wave2_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}, {1, 4}};
-
-//        Multimap<String, Integer> map_wave2 = ArrayListMultimap.create();
-//        map_wave2.put("speed", 8);
-//        map_wave2.put("shield", 5);
-//        map_wave2.put("fly", 4);
-//        map_wave2.put("shield", 5);
-//        map_wave2.put("speed", 10);
-//        map_wave2.put("fly", 4);
-
         Wave wave2 = new Wave(wave2_distro, paths);
 
         Wave[] waves = {wave1, wave2};
@@ -186,6 +175,44 @@ public class HomePageController implements Initializable {
     void btn_level2_place_mouseClicked(MouseEvent event) {
         MediaPlayer mediaPlayer = new MediaPlayer(Sounds.getSound().btn_normal_click);
         mediaPlayer.play();
+
+        mainThemeMusic.getMusic().stop();
+        mainThemeMusic.getMusic().setFramePosition(0);
+
+
+        MusicController level1Music = new MusicController("src/main/resources/musics/UnderAttack.wav");
+
+        int[][] coordinations = {{773, 156}, {771, 239}, {590, 177}, {522, 325},
+                {698, 456}, {597, 476}, {712, 605}};
+
+        MoveTo moveTo = new MoveTo(1330, 240);
+        LineTo line1 = new LineTo(945, 270);
+        LineTo line2 = new LineTo(870, 115);
+        LineTo line3 = new LineTo(755, 150);
+        LineTo line4 = new LineTo(678, 282);
+        LineTo line5 = new LineTo(500, 315);
+        LineTo line6 = new LineTo(493, 430);
+        LineTo line7 = new LineTo(845, 436);
+        LineTo line8 = new LineTo(840, 570);
+        LineTo line9 = new LineTo(685, 605);
+        LineTo line10 = new LineTo(675, 760);
+        Path[] paths = {new Path(moveTo, line1, line2, line3, line4, line5, line6, line7, line8, line9, line10)};
+
+        // change the waves
+
+        int[][] wave1_distro = {{3, 5}, {2, 3}, {3, 5}, {1, 4}, {2, 3}};
+        Wave wave1 = new Wave(wave1_distro, paths);
+
+        int[][] wave2_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}, {1, 4}};
+        Wave wave2 = new Wave(wave2_distro, paths);
+
+        int[][] wave3_distro = {{3, 8}, {2, 5}, {1, 4}, {2, 5}};
+
+        Wave[] waves = {wave1, wave2};
+
+        Map level1 = new Map(Images.getImage().map_1, coordinations, 200, 20, level1Music, waves);
+        MapController.setMap(level1);
+        Main.getPrimaryStage().setScene(MapController.getScene());
     }
 
     @FXML

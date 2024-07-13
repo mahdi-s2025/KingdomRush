@@ -9,7 +9,9 @@ public class SpeedRaider extends Raider {
     public SpeedRaider() {
         super(100, 20, 20, 2, Images.getImage().speed);
         this.raiderType = RaiderType.SPEED;
-        this.setFitWidth(65);
-        this.setFitHeight(54);
+//        this.setFitWidth(65);
+//        this.setFitHeight(54);
+        setFitWidth(55);
+        setFitHeight(50);
     }
 }

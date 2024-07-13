@@ -5,14 +5,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kingdom_rush.controller.MapController">
    <children>
-      <ImageView fx:id="img_map" fitHeight="720.0" fitWidth="1280.0" onMouseClicked="#img_map_mouseClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../../map/map-1.jpg" />
-         </image></ImageView>
+      <ImageView fx:id="img_map" fitHeight="720.0" fitWidth="1280.0" onMouseClicked="#img_map_mouseClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Label fx:id="lbl_health" layoutX="107.0" layoutY="10.0" prefHeight="24.0" prefWidth="30.0" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="16.0" />
@@ -109,7 +107,7 @@
             <Image url="@../../map/archer.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="100.0" layoutX="14.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="100.0" layoutX="14.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../map/tower-place.png" />
          </image>
@@ -125,5 +123,16 @@
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="497.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" />
+      <Circle fill="DODGERBLUE" layoutX="1298.0" layoutY="240.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="945.0" layoutY="270.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="870.0" layoutY="117.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="755.0" layoutY="150.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="678.0" layoutY="282.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="500.0" layoutY="315.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="493.0" layoutY="430.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="845.0" layoutY="436.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="840.0" layoutY="570.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="685.0" layoutY="605.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="666.0" layoutY="706.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
