@@ -234,8 +234,6 @@ public class MapController implements Initializable {
 
     @FXML
     void img_map_mouseClicked(MouseEvent event) {
-        System.out.println(event.getX());
-        System.out.println(event.getY());
         ArrayList<Node> nodes = new ArrayList<>(root.getChildren());
         for (Node node : nodes) {
             if (node instanceof ImageView imageView) {
